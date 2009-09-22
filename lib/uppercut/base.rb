@@ -44,7 +44,12 @@ class Uppercut
       
       @connect_lock.lock
 
-      client.connect
+      if @port.nil?
+        client.connect(@host)
+      else
+        client.connect(@host, @port)
+      end
+
       client.auth(@pw)
       @client = client
       

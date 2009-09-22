@@ -56,6 +56,9 @@ class Uppercut
       
       @user = user
       @pw = pw
+      @host = options[:host]
+      @port = options[:port]
+      
       connect if options[:connect]
       listen if options[:listen]
       
